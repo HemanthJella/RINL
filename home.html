@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="home.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading text-center">VSP PREDICTIONS</div>
+    <div class="panel-body">
+      
+<form action={% url 'predict' %}  method="POST">
+	{% csrf_token %}
+
+  <!--customer number-->
+  <div class="row" id="custno">
+    <div class="col-sm-5" style="text-align:right;">
+      <label>Customer Number</label>
+    </div>
+    <div class="col-sm-7">
+      <input type="number" name="cust_no">
+    </div>
+  </div>
+  
+  <!--Start time-->
+  <div class="row">
+    <div class="col-sm-5" style="text-align:right;">
+      <label>Start time</label>
+    </div>
+    <div class="col-sm-7">
+      <input type="month" name="st_time">
+    </div>
+  </div>
+  
+  <!--End time-->
+  <div class="row">
+    <div class="col-sm-5" style="text-align:right;">
+      <label>End time</label>
+    </div>
+    <div class="col-sm-7">
+      <input type="month" name="end_time">
+    </div>
+  </div>
+
+  <!--submit button-->
+  <div class="row">
+    <div class="col-11" style="text-align:center;">
+      <input type="submit" value="SUBMIT" class="btn btn-primary">
+    </div>
+  </div>
+
+</form>
+    </div>
+  </div>  
+</div>  
+
+
+
+</body>
+</html>
